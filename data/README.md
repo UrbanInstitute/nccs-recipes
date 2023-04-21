@@ -74,6 +74,10 @@ You can also read data from an external source as long as it has a URL. The impo
 
 In Box you can select the option to share a file, but you need to go into the advanced settings and select the link to the raw data file (the other link takes you to an HTML download page). 
 
+```r
+d <- read.csv( "https://urbanorg.box.com/shared/static/q6r3bviyidwioxab5qygvfiqgldrnx0x.csv" )
+```
+
 In DropBox you can right-click on a file and select "Copy DropBox Link" to get a URL. To use the URL to load data directly you just need to change the download option to yes (change "dl=0" to "dl=1" at the end of the URL): 
 
 ```r
