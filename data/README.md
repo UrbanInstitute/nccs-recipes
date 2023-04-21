@@ -62,6 +62,20 @@ This will create an [R script](USMortality.R) that contains the object. You woul
 3. Source the URL in the script. 
 
 ```r
-source( "" )
+source( "https://raw.githubusercontent.com/UrbanInstitute/nccs-pubs-recipes/main/data/USMortality.R" )
 ```
 
+Note that repositories have to be public for this to work properly.
+
+
+### Hosted Data
+
+You can also read data from an external source as long as it has a URL. The important thing is finding the right link to the raw file. 
+
+In Box you can select the option to share a file, but you need to go into the advanced settings and select the link to the raw data file (the other link takes you to an HTML download page). 
+
+In DropBox you can right-click on a file and select "Copy DropBox Link" to get a URL. To use the URL to load data directly you just need to change the download option to yes (change "dl=0" to "dl=1" at the end of the URL): 
+
+```r
+d <- read.csv( "https://www.dropbox.com/s/pruacygsb3z7e5j/biz-mod-data.csv?dl=1" )
+```
