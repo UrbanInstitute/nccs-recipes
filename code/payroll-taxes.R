@@ -1,31 +1,22 @@
-#This script uses 2019 Form 990 data, available at https://rb.gy/at3sp,
-#to estimate the annual amount of payroll taxes that nonprofits pay.
-#We use 2019, 2020, and 2021 files since there's a 2-year lag.
-#And we adjust 18.85% for inflation at the end, because
-#https://salaryinflation.com/ says salaries experienced that much inflation
-#from January 2019 to April 2023 (when we wrote this script).
+# This script uses 2019 Form 990 data, available at https://rb.gy/at3sp,
+# to estimate the annual amount of payroll taxes that nonprofits pay.
+# We use 2019, 2020, and 2021 files since there's a 2-year lag.
+# And we adjust 18.85% for inflation at the end, because
+# https://salaryinflation.com/ says salaries experienced that much inflation
+# from January 2019 to April 2023 (when we wrote this script).
 
 library( tidyverse )
 library( knitr )
 
-#read the CSVs
-soi.2021 <- read_csv(
-  "https://urbanorg.box.com/shared/static/q6r3bviyidwioxab5qygvfiqgldrnx0x.csv"
-  )
-soi.pf.2021 <- read_csv(
-  "https://urbanorg.box.com/shared/static/h51re368fls4zjojjewxqfk59tzfmpjv.csv"
-  )
-soi.2020 <- read_csv(
-  "https://urbanorg.box.com/shared/static/qvzbroegxaz6fs2zgdt8vdc76wcb0owq.csv"
-  )
-soi.pf.2020 <- read_csv(
-  "https://urbanorg.box.com/shared/static/qhzpgenehsgg9dcn4lgm26huxnnxjo2b.csv"
-  )
-soi.2019 <- read_csv(
-  "https://urbanorg.box.com/shared/static/kgonjv86e1fob90rdk12burnsc0ces3s.csv"
-  )
 
-#check the tax period years that are in the datasets
+# read the CSVs
+soi.2021    <- read_csv( "https://urbanorg.box.com/shared/static/q6r3bviyidwioxab5qygvfiqgldrnx0x.csv" )
+soi.pf.2021 <- read_csv( "https://urbanorg.box.com/shared/static/h51re368fls4zjojjewxqfk59tzfmpjv.csv" )
+soi.2020    <- read_csv( "https://urbanorg.box.com/shared/static/qvzbroegxaz6fs2zgdt8vdc76wcb0owq.csv" )
+soi.pf.2020 <- read_csv( "https://urbanorg.box.com/shared/static/qhzpgenehsgg9dcn4lgm26huxnnxjo2b.csv" )
+soi.2019    <- read_csv( "https://urbanorg.box.com/shared/static/kgonjv86e1fob90rdk12burnsc0ces3s.csv" )
+
+# check the tax period years that are in the datasets
 soi.2021$year <- substr( as.character( soi.2021$tax_pd ), 1, 4)
 table( soi.2021$year ) %>% kable()
 
@@ -128,10 +119,10 @@ soi.2019 <- subset( soi.2019, year=="2019" )
 soi.pf.2021 <- subset( soi.pf.2021, year=="2019" )
 soi.pf.2020 <- subset( soi.pf.2020, year=="2019" )
 
-#COMBINE DATASETS
-  #only keep the variables we'll need,
-  #because several of the variable types don't match, and it's creating errors.
-  #and make soi_2021$EIN lowercase to match 2020 and 2019
+# COMBINE DATASETS
+  # only keep the variables we'll need,
+  # because several of the variable types don't match, and it's creating errors.
+  # and make soi_2021$EIN lowercase to match 2020 and 2019
 soi.2021$ein <- soi.2021$EIN
 
 soi.2021 <- 
