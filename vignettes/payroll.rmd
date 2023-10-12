@@ -1,0 +1,392 @@
+---
+title: "Estimating Sector Size Using Payroll Taxes"
+output:
+  html_document:
+    theme: readable
+    df_print: paged
+    highlight: zenburn
+    toc: true
+    self_contained: true
+    number_sections: false
+    css: clean.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=F, message=F)
+```
+
+
+
+## Setup 
+
+
+### Packages 
+
+You can install R packages as follows:
+
+```{r, eval=F}
+install.packages( "knitr" )
+install.packages( "tidyverse" )
+```
+
+If you already have these packages, you only need to load the libraries.
+
+```{r}
+library( knitr )
+library( tidyverse )
+library( pander )
+```
+
+
+### Data 
+
+Load the SOI Extract data obtained from the IRS: 
+
+```{r, echo=F, eval=T, cache=T}
+url.pc.2019 <- "C:/Users/jdlec/Downloads/payroll/19eoextract990.csv"
+url.pc.2020 <- "C:/Users/jdlec/Downloads/payroll/20eoextract990.csv"
+url.pc.2021 <- "C:/Users/jdlec/Downloads/payroll/21eoextract990.csv"
+url.pf.2020 <- "C:/Users/jdlec/Downloads/payroll/20eoextract990pf.csv"
+url.pf.2021 <- "C:/Users/jdlec/Downloads/payroll/21eoextract990pf.csv"
+
+pc.2019 <- readr::read_csv( url.pc.2019 )
+pc.2020 <- readr::read_csv( url.pc.2020 )
+pc.2021 <- readr::read_csv( url.pc.2021 )
+pf.2020 <- readr::read_csv( url.pf.2020 )
+pf.2021 <- readr::read_csv( url.pf.2021 )
+```
+
+Download all data and read locally: 
+
+```{r, eval=F}
+URL <- "https://nccsdata.s3.us-east-1.amazonaws.com/replication/payroll/payroll.zip"
+download.file( URL, destfile="payroll.zip" )
+unzip( "payroll.zip" )
+
+pc.2019 <- readr::read_csv( "payroll/19eoextract990.csv" )
+pc.2020 <- readr::read_csv( "payroll/20eoextract990.csv" )
+pc.2021 <- readr::read_csv( "payroll/21eoextract990.csv" )
+pf.2020 <- readr::read_csv( "payroll/20eoextract990pf.csv" )
+pf.2021 <- readr::read_csv( "payroll/21eoextract990pf.csv" )
+```
+
+Or read directly from the URLs: 
+
+```{r, eval=F}
+url.pc.2019 <- "https://nccsdata.s3.us-east-1.amazonaws.com/replication/payroll/19eoextract990.csv"
+url.pc.2020 <- "https://nccsdata.s3.us-east-1.amazonaws.com/replication/payroll/20eoextract990.csv"
+url.pc.2021 <- "https://nccsdata.s3.us-east-1.amazonaws.com/replication/payroll/21eoextract990.csv"
+url.pf.2020 <- "https://nccsdata.s3.us-east-1.amazonaws.com/replication/payroll/20eoextract990pf.csv"
+url.pf.2021 <- "https://nccsdata.s3.us-east-1.amazonaws.com/replication/payroll/21eoextract990pf.csv"
+
+pc.2019 <- readr::read_csv( url.pc.2019 )
+pc.2020 <- readr::read_csv( url.pc.2020 )
+pc.2021 <- readr::read_csv( url.pc.2021 )
+pf.2020 <- readr::read_csv( url.pf.2020 )
+pf.2021 <- readr::read_csv( url.pf.2021 )
+```
+
+
+
+Preview the data: 
+
+```{r}
+head( pc.2019[,1:6] ) %>% pander()
+```
+
+
+The data dictionaries are available in the zipped directory. Additional information can be obtained at the [SOI Extracts page](https://www.irs.gov/statistics/soi-tax-stats-annual-extract-of-tax-exempt-organization-financial-data).
+
+
+## Data Preparation 
+
+### Variable Cleanup
+
+Convert six digit tax period dates (YYYYMM) to four digit years (YYYY): 
+
+
+```{r}
+pc.2021$year <- pc.2021$tax_pd  %>% substr( 1, 4 )
+pc.2020$year <- pc.2020$tax_pd  %>% substr( 1, 4 )
+pc.2019$year <- pc.2019$tax_pd  %>% substr( 1, 4 )
+pf.2020$year <- pf.2020$TAX_PRD %>% substr( 1, 4 )
+pf.2021$year <- pf.2021$TAX_PRD %>% substr( 1, 4 )
+```
+
+
+### Isolate the Study Period
+
+SOI Extract files are organized by filing dates, the dates the returns were received by the IRS. The filing date is usually around six months after the end of an organization's fiscal year, which is also twelve months ahead of the calendar year that correspond to the nonprofits activities. 
+
+In addition, nonprofits can back-file late returns or submit amended returns, so although the year of the SOI extract file is different from the periods of data contained within: 
+
+```{r}
+pc.2021 %>%
+  group_by( year ) %>%
+  summarise( n() ) %>%
+  kable( col.names = c( "Tax Period", "Frequency" ),
+         caption = "Tax Periods in the 2021 Form 990 Dataset" )
+```
+
+
+```{r}
+pf.2021 %>%
+  group_by( year ) %>%
+  summarise( n() ) %>%
+  kable( col.names = c( "Tax Period", "Frequency" ),
+         caption = "Tax Periods in the 2021 Form 990-PF Dataset" )
+```
+
+
+We need data that corresponds to the 2019 calendar year, the most recent full year available at the time of writing. 
+
+```{r}
+pc.2021.subset <- filter( pc.2021, year=="2019" )
+pf.2021.subset <- filter( pf.2021, year=="2019" )
+pc.2020.subset <- filter( pc.2020, year=="2019" )
+pf.2020.subset <- filter( pf.2020, year=="2019" )
+pc.2019.subset <- filter( pc.2019, year=="2019" )
+```
+
+Inspect to ensure we have the correct data now: 
+
+```{r}
+pc.2021.subset %>%
+  group_by( year ) %>%
+  summarise( n() ) %>%
+  kable( col.names = c( "Tax Period", "Frequency" ),
+         caption = "Tax Periods in the Subsetted 2021 Form 990 Dataset" )
+
+pf.2021.subset %>%
+  group_by( year ) %>%
+  summarise( n() ) %>%
+  kable( col.names = c( "Tax Period", "Frequency" ),
+         caption = "Tax Periods in the Subsetted 2021 Form 990-PF Dataset" )
+```
+
+
+### Harmonizing the Data
+
+In order to combine files we need to ensure that the variable names are the same. 
+
+R is case-sensitive; if one dataset uses uppercase letters for a column name and another dataset uses lowercase letters for a column name, it will not recognize them as the same column. As a result, it will not combine the columns. 
+
+So we first make the names of all of the columns lowercase. 
+
+```{r}
+names( pc.2021.subset ) <- tolower( names( pc.2021.subset ) )
+names( pc.2020.subset ) <- tolower( names( pc.2020.subset ) )
+names( pc.2019.subset ) <- tolower( names( pc.2019.subset ) )
+names( pf.2021.subset ) <- tolower( names( pf.2021.subset ) )
+names( pf.2020.subset ) <- tolower( names( pf.2020.subset ) )
+```
+
+
+
+
+Then filter the data to include only the columns we plan to use in the analysis. We use the following fields:
+
+
+**Form 990-PF Columns**
+
+| Column            | Description                                      | Location in Form 990 |
+|-------------------|--------------------------------------------------|----------------------|
+| ein               | Employer Identification Number                   | Header               |
+| payrolltx         | Payroll taxes                                    | 990 Core_Pt IX-10(A) |
+| compnsatncurrofcr | Compensation of current officers, directors, etc | 990 Core_Pt IX-5(A)  |
+| compnsatnandothr  | Compensation of disqualified persons             | 990 Core_Pt IX-6(A)  |
+| othrsalwages      | Other salaries and wages                         | 990 Core_Pt IX-7(A)  |
+| pensionplancontrb | Pension plan contributions                       | 990 Core_Pt IX-8(A)  |
+| othremplyeebenef  | Other employee benefits                          | 990 Core_Pt IX-9(A)  |
+
+**Form 990-PF Columns**
+
+| Column         | Description                      | Location in Form 990    |
+|----------------|----------------------------------|-------------------------|
+| ein            | Employer Identification Number   | Header                  |
+| compofficers   | Compensation of officers         | 990-PF Pt I-13, col (a) |
+| pensplemplbenf | Pension plans, employee benefits | 990-PF Pt I-15, col (a) |
+
+
+```{r}
+pc.2021.subset2 <- 
+  pc.2021.subset %>%
+  select( ein, payrolltx, compnsatncurrofcr, 
+          compnsatnandothr, othrsalwages, 
+          pensionplancontrb, othremplyeebenef ) 
+
+pc.2020.subset2 <- 
+  pc.2020.subset %>%
+  select( ein, payrolltx, compnsatncurrofcr, 
+          compnsatnandothr, othrsalwages, 
+          pensionplancontrb, othremplyeebenef ) 
+
+pc.2019.subset2 <- 
+  pc.2019.subset %>%
+  select( ein, payrolltx, compnsatncurrofcr, 
+          compnsatnandothr, othrsalwages, 
+          pensionplancontrb, othremplyeebenef ) 
+
+pf.2021.subset2 <- 
+  pf.2021.subset %>%
+  select( ein, compofficers, pensplemplbenf ) 
+
+pf.2020.subset2 <- 
+  pf.2020.subset %>%
+  select( ein, compofficers, pensplemplbenf ) 
+```
+
+
+### Stack the data
+
+```{r}
+pc <- 
+  bind_rows( pc.2021.subset2, 
+             pc.2020.subset2, 
+             pc.2019.subset2 )
+pf <- 
+  bind_rows( pf.2021.subset2, 
+             pf.2020.subset2 )
+```
+
+
+
+### Remove duplicate EINs
+
+There might be some duplicate EINs in the combined datasets because some organizations may have submitted amended returns.
+
+
+```{r}
+# roughly 1,200 duplicates
+n_distinct( pc$ein )
+nrow( pc )
+
+n_distinct( pf$ein )
+nrow( pf )
+```
+
+Remove duplicate EINs from the combined datasets
+
+```{r}
+pc <- pc %>% distinct( ein, .keep_all = TRUE )
+pf <- pf %>% distinct( ein, .keep_all = TRUE )
+
+n_distinct( pc$ein )
+nrow( pc )
+
+n_distinct( pf$ein )
+nrow( pf )
+```
+
+
+## Analysis
+
+
+### Step 1: Calculate Payroll Taxes Paid by Nonprofits 
+
+Calculate the amount of payroll taxes paid by Form 990 filers in 2019: 
+
+```{r}
+# helpful function for printing large numbers
+dollarize <- function(x) 
+{ paste0( "$", format( round(x,0), big.mark="," ) ) }
+
+prtax <- sum( pc$payrolltx, na.rm = T )
+dollarize( prtax )
+```
+
+
+
+### Step 2: Estimate the Effective Payroll Tax Rate 
+
+Calculate a payroll tax/salaries and benefits ratio for Form 990 filers.
+
+To calculate the ratio, we divide the amount of payroll taxes that Form 990 filers pay by the amount that Form 990 filers spend on salaries and benefits.
+
+Calculate the amount that Form 990 filers spend on salaries and benefits.
+
+```{r}
+salaries <- 
+  sum( pc$compnsatncurrofcr,
+       pc$compnsatnandothr,
+       pc$othrsalwages,
+       pc$pensionplancontrb,
+       pc$othremplyeebenef, 
+       na.rm = T )
+```
+
+The following function can be helpful for printing large numbers: 
+
+```{r}
+dollarize( salaries )
+```
+
+
+We estimate the effective tax rate by tabulating the amount of payroll taxes paid by nonprofits divided by total salary costs: 
+
+```{r}
+ratio <- prtax / salaries
+paste0( 100*round( ratio, 4 ), "%" )
+```
+
+### Step 3: Estimate PF Contributions 
+
+It's not perfect, but it allows us to roughly estimate the payroll taxes paid by private foundations since that data is not included in the SOI PF Extracts: 
+
+```{r}
+salaries.pf <- 
+  sum( pf$compofficers, 
+       pf$pensplemplbenf, 
+       na.rm = T )
+
+dollarize( salaries.pf )
+```
+Estimated payroll taxes contributed by PFs: 
+
+```{r}
+prtax.pf <- ratio * salaries.pf
+
+dollarize( prtax.pf )
+```
+
+
+
+### Step 4: Tabulate Totals 
+
+Add the amount of payroll taxes that nonprofits pay to the estimated amount of payroll taxes contributed by Private Foundations: 
+
+```{r}
+tax.total <- prtax + prtax.pf
+dollarize( tax.total )
+```
+
+
+
+### Step 5: Adjust for Inflation
+
+Normally inflation would be marginal over a 2-3 year period, but inflation was excessive during the time frame of the study (2019 to 2023). As a result we should include an inflation adjustment. This scaling factor can be obtained by entering the start and end year on any reputable online inflation generator. 
+
+```{r}
+( tax.total * 1.1885 ) %>% dollarize()
+```
+
+We see that the estimate increased from $55 billion to $66 billion, a significant amount. 
+
+We would interpret this number either as the value of 2019 nonprofit payroll tax contributions in today's dollars, or as an estimate of what nonprofits are likely paying in 2023 if we assume employment rates were similar in those two time periods. 
+
+
+
+## Conclusion
+
+We estimate that nonprofits pay approximately $66 billion per year in payroll taxes. 
+
+As we described at the beginning of this tutorial, this is a conservative estimate. 
+
+* It does not include the payroll taxes that Form 990-EZ or Form 990-N filers pay. 
+* It underestimates the payroll taxes that private foundations pay.
+* It also does not include the payroll taxes from nonprofits that are not required to file annual 990 returns (for example, churches). 
+
+This approach is a useful way to demonstrate the size and economic contributions of the nonprofit sector using freely available IRS administrative tax data.
+
+
+
