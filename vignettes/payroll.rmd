@@ -4,11 +4,14 @@ output:
   html_document:
     theme: readable
     df_print: paged
-    highlight: zenburn
+    highlight: tango
     toc: true
     self_contained: true
     number_sections: false
     css: clean.css
+    include:
+      before_body: header.html
+      after_body: footer.html
 ---
 
 ```{r setup, include=FALSE}
@@ -27,14 +30,15 @@ You can install R packages as follows:
 ```{r, eval=F}
 install.packages( "knitr" )
 install.packages( "tidyverse" )
+install.packages( "pander" )
 ```
 
 If you already have these packages, you only need to load the libraries.
 
 ```{r}
-library( knitr )
-library( tidyverse )
-library( pander )
+library( tidyverse )  # data wrangling
+library( knitr )      # pretty formats
+library( pander )     # pretty formats
 ```
 
 
@@ -105,6 +109,8 @@ The data dictionaries are available in the zipped directory. Additional informat
 Convert six digit tax period dates (YYYYMM) to four digit years (YYYY): 
 
 
+
+
 ```{r}
 pc.2021$year <- pc.2021$tax_pd  %>% substr( 1, 4 )
 pc.2020$year <- pc.2020$tax_pd  %>% substr( 1, 4 )
@@ -113,6 +119,10 @@ pf.2020$year <- pf.2020$TAX_PRD %>% substr( 1, 4 )
 pf.2021$year <- pf.2021$TAX_PRD %>% substr( 1, 4 )
 ```
 
+```{r, results="hold"}
+head(pc.2021$tax_pd)
+head(pc.2021$year)
+```
 
 ### Isolate the Study Period
 
@@ -267,15 +277,13 @@ nrow( pf )
 
 Remove duplicate EINs from the combined datasets
 
-```{r}
+```{r, results="hold"}
 pc <- pc %>% distinct( ein, .keep_all = TRUE )
 pf <- pf %>% distinct( ein, .keep_all = TRUE )
 
-n_distinct( pc$ein )
-nrow( pc )
-
-n_distinct( pf$ein )
-nrow( pf )
+# check to ensure it worked
+n_distinct( pc$ein ) == nrow( pc )
+n_distinct( pf$ein ) == nrow( pf )
 ```
 
 
@@ -292,7 +300,7 @@ dollarize <- function(x)
 { paste0( "$", format( round(x,0), big.mark="," ) ) }
 
 prtax <- sum( pc$payrolltx, na.rm = T )
-dollarize( prtax )
+prtax %>% dollarize()
 ```
 
 
@@ -318,7 +326,7 @@ salaries <-
 The following function can be helpful for printing large numbers: 
 
 ```{r}
-dollarize( salaries )
+salaries %>% dollarize()
 ```
 
 
@@ -339,14 +347,14 @@ salaries.pf <-
        pf$pensplemplbenf, 
        na.rm = T )
 
-dollarize( salaries.pf )
+salaries.pf %>% dollarize()
 ```
 Estimated payroll taxes contributed by PFs: 
 
 ```{r}
 prtax.pf <- ratio * salaries.pf
 
-dollarize( prtax.pf )
+prtax.pf %>% dollarize()
 ```
 
 
@@ -357,7 +365,7 @@ Add the amount of payroll taxes that nonprofits pay to the estimated amount of p
 
 ```{r}
 tax.total <- prtax + prtax.pf
-dollarize( tax.total )
+tax.total %>% dollarize()
 ```
 
 

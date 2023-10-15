@@ -1537,42 +1537,42 @@ border: none; display: inline-block;
 -khtml-user-select: none; -moz-user-select: none;
 -ms-user-select: none; user-select: none;
 padding: 0 4px; width: 4em;
+color: #aaaaaa;
 }
-pre.numberSource { margin-left: 3em; padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-{ color: #cccccc; background-color: #303030; }
+{ background-color: #f8f8f8; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ffcfaf; } 
-code span.an { color: #7f9f7f; font-weight: bold; } 
-code span.at { } 
-code span.bn { color: #dca3a3; } 
-code span.bu { } 
-code span.cf { color: #f0dfaf; } 
-code span.ch { color: #dca3a3; } 
-code span.cn { color: #dca3a3; font-weight: bold; } 
-code span.co { color: #7f9f7f; } 
-code span.cv { color: #7f9f7f; font-weight: bold; } 
-code span.do { color: #7f9f7f; } 
-code span.dt { color: #dfdfbf; } 
-code span.dv { color: #dcdccc; } 
-code span.er { color: #c3bf9f; } 
+code span.al { color: #ef2929; } 
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } 
+code span.at { color: #204a87; } 
+code span.bn { color: #0000cf; } 
+code span.cf { color: #204a87; font-weight: bold; } 
+code span.ch { color: #4e9a06; } 
+code span.cn { color: #8f5902; } 
+code span.co { color: #8f5902; font-style: italic; } 
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } 
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } 
+code span.dt { color: #204a87; } 
+code span.dv { color: #0000cf; } 
+code span.er { color: #a40000; font-weight: bold; } 
 code span.ex { } 
-code span.fl { color: #c0bed1; } 
-code span.fu { color: #efef8f; } 
+code span.fl { color: #0000cf; } 
+code span.fu { color: #204a87; font-weight: bold; } 
 code span.im { } 
-code span.in { color: #7f9f7f; font-weight: bold; } 
-code span.kw { color: #f0dfaf; } 
-code span.op { color: #f0efd0; } 
-code span.ot { color: #efef8f; } 
-code span.pp { color: #ffcfaf; font-weight: bold; } 
-code span.sc { color: #dca3a3; } 
-code span.ss { color: #cc9393; } 
-code span.st { color: #cc9393; } 
-code span.va { } 
-code span.vs { color: #cc9393; } 
-code span.wa { color: #7f9f7f; font-weight: bold; } 
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } 
+code span.kw { color: #204a87; font-weight: bold; } 
+code span.op { color: #ce5c00; font-weight: bold; } 
+code span.ot { color: #8f5902; } 
+code span.pp { color: #8f5902; font-style: italic; } 
+code span.sc { color: #ce5c00; font-weight: bold; } 
+code span.ss { color: #4e9a06; } 
+code span.st { color: #4e9a06; } 
+code span.va { color: #000000; } 
+code span.vs { color: #4e9a06; } 
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -1606,119 +1606,67 @@ code span.wa { color: #7f9f7f; font-weight: bold; }
 
 
 
-<style type="text/css">.powered-by-datacamp{
-margin-bottom: 40px;
-display: none !important;
-}
-div.datacamp-exercise{
-margin-bottom: 40px !important;
-}
-div.datacamp-exercise .dcl-btn-primary {
-
-
-background-color: LightSteelBlue; 
-color: white; 
-}
-.question{
-background-color: LightSteelBlue;
-border-radius: 10px;
-border: 1px solid lightgray;
-padding-top:10px;
-padding-bottom:10px;
-font-size: 85%;
-font-family: Verdana;
-
-color: #FFFFFF !important;
-padding-left:05%;
-padding-right:05%;
-margin-bottom:40px;
-}
-.quiz{
-background-color: #bcb2a4; 
-border-radius: 10px;
-border: 1px solid lightgray;
-padding-top:10px;
-padding-bottom:10px;
-font-size: 87%;
-font-family: Verdana;
- color: #FFFFFF !important;
-padding-left:05%;
-padding-right:05%;
-margin-bottom:40px;
-}
- 
-.tip{
-background-color: #153243;
-border-radius: 10px;
-border: 1px solid lightgray;
-padding-top:10px;
-padding-bottom:10px;
-font-size: 85%;
-font-family: Verdana;
-
-color: #FFFFFF !important;
-padding-left:05%;
-padding-right:05%;
-margin-bottom:40px;
-}
- .note{
-background-color: #E0E0E2;  
-border: 1px solid lightgray; padding-top:10px;
-padding-bottom:10px;
-font-size: 85%;
-font-family: Verdana;
-
-color: #3c4859 !important;
-padding-left:05%;
-padding-right:05%;
-margin-bottom:40px;
-}
-.caution{
-background-color: darkred;
-
-border: 1px solid lightgray;
-padding-top:10px;
-padding-bottom:5px;
-font-size: 75%;
-font-family: Verdana;
-
-color: #FFFFFF !important;
-padding-left:05%;
-padding-right:05%;
-margin-bottom:40px;
-}
-.caution code{
-font-size: 150% !important;
-}
-.warning{
-background-color: #9D8420; 
-
-border: 1px solid lightgray;
-padding-top:10px;
-padding-bottom:5px;
-font-size: 75%;
-font-family: Verdana;
-
-color: #FFFFFF !important;
-padding-left:05%;
-padding-right:05%;
-margin-bottom:40px;
-}
-.warning code{
-font-size: 150% !important;
-}
+<style type="text/css">
 body{
 font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 font-size:calc(1.5em + 0.25vw);
 font-weight:300;line-height:1.65;
 -webkit-font-smoothing:antialiased;
 -moz-osx-font-smoothing:grayscale;
-margin-left:20%;
-margin-right:20%} body,aside,main{flex-direction:column} body{display:flex;min-height:100vh} 
-blockquote,figure{margin:0} #TOC {
+}
+#TOC {
 margin-top:30px;
 margin-bottom:80px;
 font-weight:normal;
+font-size:1em;
+}
+h1{
+font-weight:700;
+font-size:1.85em;
+margin-top:100px !important;
+margin-bottom:30px;
+color: black;  } h2,h3,h4,h5,h6{
+font-weight:700;
+margin-top:60px !important;
+margin-bottom:30px;
+color:#12719E; }
+table{
+border-spacing:1px;
+margin-top:80px;
+margin-bottom:100px !important;
+width: auto !important;
+margin-left: auto;
+margin-right: auto;
+align:center} table>caption {
+color: #6E1614;
+font-size:.8em;
+font-style: italic;
+}
+td{
+padding: 3px 10px 3px 10px } th{
+text-align:inherit;
+color: #1696d2;
+font-weight:700;
+font-size:.8em;} a{
+
+color: #CA5800;
+font-weight:normal; text-decoration:inherit;
+transition:color .2s} a.selected,a:hover{
+color: #1696d2;} .sourceCode {
+overflow: auto;
+}
+.footer {
+position: absolute; min-width:100%;
+max-width:100%;
+margin:0px;
+width:100%;
+left: 0;
+right: 0;
+}
+body>header h1{width:100%;line-height:1.8;margin-bottom:.5em} blockquote{ border-left:4px solid lightgray; padding-left:1.5em} blockquote,figure{margin:0} p.caption {
+text-align: center;
+font-style: italic;
+margin-bottom:30px;
 }
 img {
 max-width: 90% !important;
@@ -1728,108 +1676,8 @@ margin-left: auto;
 margin-top:30px;
 margin-bottom:40px;
 }
-a{
-
-color: #CA5800;
-font-weight:normal; text-decoration:inherit;
-transition:color .2s} a.selected,a:hover{
-color: #EC008B;} article a,b,strong,th{font-weight:400} h1{
-font-weight:400;
-margin-top:100px !important;
-margin-bottom:30px;
-color: #1696d2; font-weight:normal;
-} h2,h3,h4,h5,h6{
-font-weight:700;
-margin-top:60px !important;
-margin-bottom:30px;
-color:#12719E; } p.caption {
-text-align: center;
-font-style: italic;
-margin-bottom:30px;
-}
-article a{color:#68f} article header a, article footer a{font-weight:inherit;color:inherit} 
-header time{color:green}
-hr{border:1px solid rgba(148,148,148,0.3);margin:2em 0} blockquote{ border-left:4px solid lightgray; padding-left:1.5em} 
-@media (prefers-color-scheme: light){body{background:#fff !important;color:#000 !important} } @media (prefers-color-scheme: dark){body{background:#282828 !important;color:#fff !important} } main,article{flex-grow:1} header,footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center} header nav>*,footer nav>*{margin:0 .8em} header nav>:first-child,footer nav>:first-child{margin-left:0} header nav>:last-child,footer nav>:last-child{margin-right:0} pre{
-background:#f7f7f7;
-
-color:black;
-border-radius:2px;
-font-size:.7em;
-margin:1.5em 0;
-padding:.8em 1.2em;
-white-space:pre-wrap;
-margin-top:30px;
-margin-bottom:40px }
-
-p code{
-
-
-opacity:.5;
-border-radius:4px;
-font-size:.8em;
-margin:0 .1em;
-padding:.2em .4em } table{
-border-spacing:1px;
-
-margin-top:80px;
-margin-bottom:100px !important;
-width: auto !important;
-margin-left: auto;
-margin-right: auto;
-align:center} table caption {
-color: #6E1614; }
-
-td{
-
-padding: 3px 10px 3px 10px } th{
-
-text-align:inherit;
-color: #A4201D; } 
-
-
-
-h1{font-size:1.85em} 
-article header{flex-direction:column;align-items:inherit} article header{margin-bottom:1.5em} 
-
-
-.footer {
-background-color:#726e6e;
-height:100px;
-color:white; padding: 20px 3px 20px 3px;
-position: absolute;
-left: 0;
-right: 0;
-width: 100%;
-margin-top:80px; }
-.footer a{ color:orange; text-decoration:bold !important; } 
-body>header h1{width:100%;line-height:1.8;margin-bottom:.5em} 
-.navbar {
-overflow: hidden;
-
-background-color: #f7f7f7;
-color: orange;
- 
-top: 0; 
-width: 100%; 
-}
-
-.nav.navbar-nav li a {
-
-color: darkgray;
-}
-
-.nav.navbar-nav li a:hover {
-
-color: orange;
-}
-
-.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover
-{
-color: black;
-background-color: #f7f7f7;
-}
-</style>
+article a,b,strong,th{font-weight:400} article a{color:#68f} article header a, article footer a{font-weight:inherit;color:inherit} article header{flex-direction:column;align-items:inherit} article header{margin-bottom:1.5em} main,article{flex-grow:1} header,footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center} header nav>*,footer nav>*{margin:0 .8em} header nav>:first-child,footer nav>:first-child{margin-left:0} header nav>:last-child,footer nav>:last-child{margin-right:0} header time{color:green}
+hr{border:1px solid rgba(148,148,148,0.3);margin:2em 0} @media (prefers-color-scheme: light){body{background:#fff !important;color:#000 !important} } @media (prefers-color-scheme: dark){body{background:#282828 !important;color:#fff !important} } </style>
 
 
 
@@ -1921,6 +1769,94 @@ display: none;
 
 
 
+<div class="banner">
+
+
+
+</div>
+
+
+
+
+<style>
+.banner {
+background: linear-gradient(to right, hsla(199, 80%, 35%, 1) 0%, hsla(199, 81%, 45%, 1) 50%, hsla(199, 80%, 35%, 1) 100%);
+min-height: 200px !important;
+\* height: 300px; *\
+padding-bottom: 1em;
+padding-top: 1em;
+width: 100vw;
+position: relative;
+margin-left: -50vw;
+left: 50%;
+}
+h2.bannerh2 {
+color: white;
+display: inline-block;
+vertical-align: middle;
+font-size:calc(4em);
+margin-top: 00px;
+margin-bottom: 00px;
+}
+a.navlink li.navitem ui.navlist {
+display: inline-block;
+vertical-align: middle;
+}
+ul.navlist {
+list-style-type: none;
+}
+.banner ul li {
+font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+font-size:calc(2em);
+font-weight:300;
+line-height:1.2 !important;
+color: white;
+text-transform: uppercase;
+}
+.banner body{
+font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+font-size:calc(1.5em + 0.25vw);
+font-weight:300;line-height:1.65;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+margin-left:20%;
+margin-right:20%;
+color: white;
+}
+.bannerFloatOuter {
+width: 20%;
+float: left;
+margin-left: 50px;
+margin-top: 0px;
+margin-bottom: 0px;
+min-height: 200px !important;
+display: inline-block;
+vertical-align: middle;
+}
+.bannerFloatInner1 {
+width: 20%;
+float: left;
+align: left;
+margin-left: 50px;
+text-align: left;
+min-height: 200px !important;
+}
+.bannerFloatInner2 {
+width: 30%;
+float: left;
+text-align: right;
+margin-left: 100px;
+min-height: 200px !important;
+display: inline-block;
+vertical-align: middle;
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+</style>
 
 <div id="header">
 
@@ -1971,12 +1907,13 @@ Inflation</a></li>
 <h3>Packages</h3>
 <p>You can install R packages as follows:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>( <span class="st">&quot;knitr&quot;</span> )</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">install.packages</span>( <span class="st">&quot;tidyverse&quot;</span> )</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">install.packages</span>( <span class="st">&quot;tidyverse&quot;</span> )</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">install.packages</span>( <span class="st">&quot;pander&quot;</span> )</span></code></pre></div>
 <p>If you already have these packages, you only need to load the
 libraries.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>( knitr )</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">library</span>( tidyverse )</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">library</span>( pander )</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>( tidyverse )  <span class="co"># data wrangling</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">library</span>( knitr )      <span class="co"># pretty formats</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">library</span>( pander )     <span class="co"># pretty formats</span></span></code></pre></div>
 </div>
 <div id="data" class="section level3">
 <h3>Data</h3>
@@ -2091,6 +2028,10 @@ Extracts page</a>.</p>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>pc<span class="fl">.2019</span><span class="sc">$</span>year <span class="ot">&lt;-</span> pc<span class="fl">.2019</span><span class="sc">$</span>tax_pd  <span class="sc">%&gt;%</span> <span class="fu">substr</span>( <span class="dv">1</span>, <span class="dv">4</span> )</span>
 <span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>pf<span class="fl">.2020</span><span class="sc">$</span>year <span class="ot">&lt;-</span> pf<span class="fl">.2020</span><span class="sc">$</span>TAX_PRD <span class="sc">%&gt;%</span> <span class="fu">substr</span>( <span class="dv">1</span>, <span class="dv">4</span> )</span>
 <span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>pf<span class="fl">.2021</span><span class="sc">$</span>year <span class="ot">&lt;-</span> pf<span class="fl">.2021</span><span class="sc">$</span>TAX_PRD <span class="sc">%&gt;%</span> <span class="fu">substr</span>( <span class="dv">1</span>, <span class="dv">4</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">head</span>(pc<span class="fl">.2021</span><span class="sc">$</span>tax_pd)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">head</span>(pc<span class="fl">.2021</span><span class="sc">$</span>year)</span></code></pre></div>
+<pre><code>## [1] 202005 202012 202104 202003 202006 202012
+## [1] &quot;2020&quot; &quot;2020&quot; &quot;2021&quot; &quot;2020&quot; &quot;2020&quot; &quot;2020&quot;</code></pre>
 </div>
 <div id="isolate-the-study-period" class="section level3">
 <h3>Isolate the Study Period</h3>
@@ -2102,11 +2043,11 @@ nonprofits activities.</p>
 <p>In addition, nonprofits can back-file late returns or submit amended
 returns, so although the year of the SOI extract file is different from
 the periods of data contained within:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>pc<span class="fl">.2021</span> <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="fu">group_by</span>( year ) <span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="fu">n</span>() ) <span class="sc">%&gt;%</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="fu">kable</span>( <span class="at">col.names =</span> <span class="fu">c</span>( <span class="st">&quot;Tax Period&quot;</span>, <span class="st">&quot;Frequency&quot;</span> ),</span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Tax Periods in the 2021 Form 990 Dataset&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>pc<span class="fl">.2021</span> <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="fu">group_by</span>( year ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="fu">n</span>() ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>  <span class="fu">kable</span>( <span class="at">col.names =</span> <span class="fu">c</span>( <span class="st">&quot;Tax Period&quot;</span>, <span class="st">&quot;Frequency&quot;</span> ),</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Tax Periods in the 2021 Form 990 Dataset&quot;</span> )</span></code></pre></div>
 <table>
 <caption>Tax Periods in the 2021 Form 990 Dataset</caption>
 <thead>
@@ -2186,11 +2127,11 @@ the periods of data contained within:</p>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>pf<span class="fl">.2021</span> <span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">group_by</span>( year ) <span class="sc">%&gt;%</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="fu">n</span>() ) <span class="sc">%&gt;%</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>  <span class="fu">kable</span>( <span class="at">col.names =</span> <span class="fu">c</span>( <span class="st">&quot;Tax Period&quot;</span>, <span class="st">&quot;Frequency&quot;</span> ),</span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Tax Periods in the 2021 Form 990-PF Dataset&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>pf<span class="fl">.2021</span> <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">group_by</span>( year ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="fu">n</span>() ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="fu">kable</span>( <span class="at">col.names =</span> <span class="fu">c</span>( <span class="st">&quot;Tax Period&quot;</span>, <span class="st">&quot;Frequency&quot;</span> ),</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Tax Periods in the 2021 Form 990-PF Dataset&quot;</span> )</span></code></pre></div>
 <table>
 <caption>Tax Periods in the 2021 Form 990-PF Dataset</caption>
 <thead>
@@ -2264,17 +2205,17 @@ the periods of data contained within:</p>
 </table>
 <p>We need data that corresponds to the 2019 calendar year, the most
 recent full year available at the time of writing.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>pc.<span class="fl">2021.</span>subset <span class="ot">&lt;-</span> <span class="fu">filter</span>( pc<span class="fl">.2021</span>, year<span class="sc">==</span><span class="st">&quot;2019&quot;</span> )</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>pf.<span class="fl">2021.</span>subset <span class="ot">&lt;-</span> <span class="fu">filter</span>( pf<span class="fl">.2021</span>, year<span class="sc">==</span><span class="st">&quot;2019&quot;</span> )</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>pc.<span class="fl">2020.</span>subset <span class="ot">&lt;-</span> <span class="fu">filter</span>( pc<span class="fl">.2020</span>, year<span class="sc">==</span><span class="st">&quot;2019&quot;</span> )</span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>pf.<span class="fl">2020.</span>subset <span class="ot">&lt;-</span> <span class="fu">filter</span>( pf<span class="fl">.2020</span>, year<span class="sc">==</span><span class="st">&quot;2019&quot;</span> )</span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>pc.<span class="fl">2019.</span>subset <span class="ot">&lt;-</span> <span class="fu">filter</span>( pc<span class="fl">.2019</span>, year<span class="sc">==</span><span class="st">&quot;2019&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>pc.<span class="fl">2021.</span>subset <span class="ot">&lt;-</span> <span class="fu">filter</span>( pc<span class="fl">.2021</span>, year<span class="sc">==</span><span class="st">&quot;2019&quot;</span> )</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>pf.<span class="fl">2021.</span>subset <span class="ot">&lt;-</span> <span class="fu">filter</span>( pf<span class="fl">.2021</span>, year<span class="sc">==</span><span class="st">&quot;2019&quot;</span> )</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>pc.<span class="fl">2020.</span>subset <span class="ot">&lt;-</span> <span class="fu">filter</span>( pc<span class="fl">.2020</span>, year<span class="sc">==</span><span class="st">&quot;2019&quot;</span> )</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>pf.<span class="fl">2020.</span>subset <span class="ot">&lt;-</span> <span class="fu">filter</span>( pf<span class="fl">.2020</span>, year<span class="sc">==</span><span class="st">&quot;2019&quot;</span> )</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>pc.<span class="fl">2019.</span>subset <span class="ot">&lt;-</span> <span class="fu">filter</span>( pc<span class="fl">.2019</span>, year<span class="sc">==</span><span class="st">&quot;2019&quot;</span> )</span></code></pre></div>
 <p>Inspect to ensure we have the correct data now:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>pc.<span class="fl">2021.</span>subset <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">group_by</span>( year ) <span class="sc">%&gt;%</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="fu">n</span>() ) <span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="fu">kable</span>( <span class="at">col.names =</span> <span class="fu">c</span>( <span class="st">&quot;Tax Period&quot;</span>, <span class="st">&quot;Frequency&quot;</span> ),</span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Tax Periods in the Subsetted 2021 Form 990 Dataset&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>pc.<span class="fl">2021.</span>subset <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>  <span class="fu">group_by</span>( year ) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="fu">n</span>() ) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>  <span class="fu">kable</span>( <span class="at">col.names =</span> <span class="fu">c</span>( <span class="st">&quot;Tax Period&quot;</span>, <span class="st">&quot;Frequency&quot;</span> ),</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Tax Periods in the Subsetted 2021 Form 990 Dataset&quot;</span> )</span></code></pre></div>
 <table>
 <caption>Tax Periods in the Subsetted 2021 Form 990 Dataset</caption>
 <thead>
@@ -2290,11 +2231,11 @@ recent full year available at the time of writing.</p>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>pf.<span class="fl">2021.</span>subset <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="fu">group_by</span>( year ) <span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="fu">n</span>() ) <span class="sc">%&gt;%</span></span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>  <span class="fu">kable</span>( <span class="at">col.names =</span> <span class="fu">c</span>( <span class="st">&quot;Tax Period&quot;</span>, <span class="st">&quot;Frequency&quot;</span> ),</span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Tax Periods in the Subsetted 2021 Form 990-PF Dataset&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>pf.<span class="fl">2021.</span>subset <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  <span class="fu">group_by</span>( year ) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="fu">n</span>() ) <span class="sc">%&gt;%</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>  <span class="fu">kable</span>( <span class="at">col.names =</span> <span class="fu">c</span>( <span class="st">&quot;Tax Period&quot;</span>, <span class="st">&quot;Frequency&quot;</span> ),</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Tax Periods in the Subsetted 2021 Form 990-PF Dataset&quot;</span> )</span></code></pre></div>
 <table>
 <caption>Tax Periods in the Subsetted 2021 Form 990-PF Dataset</caption>
 <thead>
@@ -2320,11 +2261,11 @@ column name and another dataset uses lowercase letters for a column
 name, it will not recognize them as the same column. As a result, it
 will not combine the columns.</p>
 <p>So we first make the names of all of the columns lowercase.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">names</span>( pc.<span class="fl">2021.</span>subset ) <span class="ot">&lt;-</span> <span class="fu">tolower</span>( <span class="fu">names</span>( pc.<span class="fl">2021.</span>subset ) )</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">names</span>( pc.<span class="fl">2020.</span>subset ) <span class="ot">&lt;-</span> <span class="fu">tolower</span>( <span class="fu">names</span>( pc.<span class="fl">2020.</span>subset ) )</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="fu">names</span>( pc.<span class="fl">2019.</span>subset ) <span class="ot">&lt;-</span> <span class="fu">tolower</span>( <span class="fu">names</span>( pc.<span class="fl">2019.</span>subset ) )</span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="fu">names</span>( pf.<span class="fl">2021.</span>subset ) <span class="ot">&lt;-</span> <span class="fu">tolower</span>( <span class="fu">names</span>( pf.<span class="fl">2021.</span>subset ) )</span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="fu">names</span>( pf.<span class="fl">2020.</span>subset ) <span class="ot">&lt;-</span> <span class="fu">tolower</span>( <span class="fu">names</span>( pf.<span class="fl">2020.</span>subset ) )</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">names</span>( pc.<span class="fl">2021.</span>subset ) <span class="ot">&lt;-</span> <span class="fu">tolower</span>( <span class="fu">names</span>( pc.<span class="fl">2021.</span>subset ) )</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="fu">names</span>( pc.<span class="fl">2020.</span>subset ) <span class="ot">&lt;-</span> <span class="fu">tolower</span>( <span class="fu">names</span>( pc.<span class="fl">2020.</span>subset ) )</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="fu">names</span>( pc.<span class="fl">2019.</span>subset ) <span class="ot">&lt;-</span> <span class="fu">tolower</span>( <span class="fu">names</span>( pc.<span class="fl">2019.</span>subset ) )</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="fu">names</span>( pf.<span class="fl">2021.</span>subset ) <span class="ot">&lt;-</span> <span class="fu">tolower</span>( <span class="fu">names</span>( pf.<span class="fl">2021.</span>subset ) )</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="fu">names</span>( pf.<span class="fl">2020.</span>subset ) <span class="ot">&lt;-</span> <span class="fu">tolower</span>( <span class="fu">names</span>( pf.<span class="fl">2020.</span>subset ) )</span></code></pre></div>
 <p>Then filter the data to include only the columns we plan to use in
 the analysis. We use the following fields:</p>
 <p><strong>Form 990-PF Columns</strong></p>
@@ -2411,67 +2352,64 @@ the analysis. We use the following fields:</p>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>pc.<span class="fl">2021.</span>subset2 <span class="ot">&lt;-</span> </span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  pc.<span class="fl">2021.</span>subset <span class="sc">%&gt;%</span></span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>  <span class="fu">select</span>( ein, payrolltx, compnsatncurrofcr, </span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>          compnsatnandothr, othrsalwages, </span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>          pensionplancontrb, othremplyeebenef ) </span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>pc.<span class="fl">2020.</span>subset2 <span class="ot">&lt;-</span> </span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>  pc.<span class="fl">2020.</span>subset <span class="sc">%&gt;%</span></span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>  <span class="fu">select</span>( ein, payrolltx, compnsatncurrofcr, </span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a>          compnsatnandothr, othrsalwages, </span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a>          pensionplancontrb, othremplyeebenef ) </span>
-<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a>pc.<span class="fl">2019.</span>subset2 <span class="ot">&lt;-</span> </span>
-<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a>  pc.<span class="fl">2019.</span>subset <span class="sc">%&gt;%</span></span>
-<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a>  <span class="fu">select</span>( ein, payrolltx, compnsatncurrofcr, </span>
-<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a>          compnsatnandothr, othrsalwages, </span>
-<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a>          pensionplancontrb, othremplyeebenef ) </span>
-<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a></span>
-<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a>pf.<span class="fl">2021.</span>subset2 <span class="ot">&lt;-</span> </span>
-<span id="cb13-20"><a href="#cb13-20" tabindex="-1"></a>  pf.<span class="fl">2021.</span>subset <span class="sc">%&gt;%</span></span>
-<span id="cb13-21"><a href="#cb13-21" tabindex="-1"></a>  <span class="fu">select</span>( ein, compofficers, pensplemplbenf ) </span>
-<span id="cb13-22"><a href="#cb13-22" tabindex="-1"></a></span>
-<span id="cb13-23"><a href="#cb13-23" tabindex="-1"></a>pf.<span class="fl">2020.</span>subset2 <span class="ot">&lt;-</span> </span>
-<span id="cb13-24"><a href="#cb13-24" tabindex="-1"></a>  pf.<span class="fl">2020.</span>subset <span class="sc">%&gt;%</span></span>
-<span id="cb13-25"><a href="#cb13-25" tabindex="-1"></a>  <span class="fu">select</span>( ein, compofficers, pensplemplbenf ) </span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>pc.<span class="fl">2021.</span>subset2 <span class="ot">&lt;-</span> </span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  pc.<span class="fl">2021.</span>subset <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">select</span>( ein, payrolltx, compnsatncurrofcr, </span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>          compnsatnandothr, othrsalwages, </span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>          pensionplancontrb, othremplyeebenef ) </span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>pc.<span class="fl">2020.</span>subset2 <span class="ot">&lt;-</span> </span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>  pc.<span class="fl">2020.</span>subset <span class="sc">%&gt;%</span></span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>  <span class="fu">select</span>( ein, payrolltx, compnsatncurrofcr, </span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>          compnsatnandothr, othrsalwages, </span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a>          pensionplancontrb, othremplyeebenef ) </span>
+<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a>pc.<span class="fl">2019.</span>subset2 <span class="ot">&lt;-</span> </span>
+<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a>  pc.<span class="fl">2019.</span>subset <span class="sc">%&gt;%</span></span>
+<span id="cb15-15"><a href="#cb15-15" tabindex="-1"></a>  <span class="fu">select</span>( ein, payrolltx, compnsatncurrofcr, </span>
+<span id="cb15-16"><a href="#cb15-16" tabindex="-1"></a>          compnsatnandothr, othrsalwages, </span>
+<span id="cb15-17"><a href="#cb15-17" tabindex="-1"></a>          pensionplancontrb, othremplyeebenef ) </span>
+<span id="cb15-18"><a href="#cb15-18" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" tabindex="-1"></a>pf.<span class="fl">2021.</span>subset2 <span class="ot">&lt;-</span> </span>
+<span id="cb15-20"><a href="#cb15-20" tabindex="-1"></a>  pf.<span class="fl">2021.</span>subset <span class="sc">%&gt;%</span></span>
+<span id="cb15-21"><a href="#cb15-21" tabindex="-1"></a>  <span class="fu">select</span>( ein, compofficers, pensplemplbenf ) </span>
+<span id="cb15-22"><a href="#cb15-22" tabindex="-1"></a></span>
+<span id="cb15-23"><a href="#cb15-23" tabindex="-1"></a>pf.<span class="fl">2020.</span>subset2 <span class="ot">&lt;-</span> </span>
+<span id="cb15-24"><a href="#cb15-24" tabindex="-1"></a>  pf.<span class="fl">2020.</span>subset <span class="sc">%&gt;%</span></span>
+<span id="cb15-25"><a href="#cb15-25" tabindex="-1"></a>  <span class="fu">select</span>( ein, compofficers, pensplemplbenf ) </span></code></pre></div>
 </div>
 <div id="stack-the-data" class="section level3">
 <h3>Stack the data</h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>pc <span class="ot">&lt;-</span> </span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">bind_rows</span>( pc.<span class="fl">2021.</span>subset2, </span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>             pc.<span class="fl">2020.</span>subset2, </span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>             pc.<span class="fl">2019.</span>subset2 )</span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>pf <span class="ot">&lt;-</span> </span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>  <span class="fu">bind_rows</span>( pf.<span class="fl">2021.</span>subset2, </span>
-<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>             pf.<span class="fl">2020.</span>subset2 )</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>pc <span class="ot">&lt;-</span> </span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="fu">bind_rows</span>( pc.<span class="fl">2021.</span>subset2, </span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>             pc.<span class="fl">2020.</span>subset2, </span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>             pc.<span class="fl">2019.</span>subset2 )</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>pf <span class="ot">&lt;-</span> </span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>  <span class="fu">bind_rows</span>( pf.<span class="fl">2021.</span>subset2, </span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>             pf.<span class="fl">2020.</span>subset2 )</span></code></pre></div>
 </div>
 <div id="remove-duplicate-eins" class="section level3">
 <h3>Remove duplicate EINs</h3>
 <p>There might be some duplicate EINs in the combined datasets because
 some organizations may have submitted amended returns.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># roughly 1,200 duplicates</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="fu">n_distinct</span>( pc<span class="sc">$</span>ein )</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># roughly 1,200 duplicates</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="fu">n_distinct</span>( pc<span class="sc">$</span>ein )</span></code></pre></div>
 <pre><code>## [1] 310349</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">nrow</span>( pc )</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">nrow</span>( pc )</span></code></pre></div>
 <pre><code>## [1] 311145</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">n_distinct</span>( pf<span class="sc">$</span>ein )</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">n_distinct</span>( pf<span class="sc">$</span>ein )</span></code></pre></div>
 <pre><code>## [1] 98253</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">nrow</span>( pf )</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">nrow</span>( pf )</span></code></pre></div>
 <pre><code>## [1] 98337</code></pre>
 <p>Remove duplicate EINs from the combined datasets</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>pc <span class="ot">&lt;-</span> pc <span class="sc">%&gt;%</span> <span class="fu">distinct</span>( ein, <span class="at">.keep_all =</span> <span class="cn">TRUE</span> )</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>pf <span class="ot">&lt;-</span> pf <span class="sc">%&gt;%</span> <span class="fu">distinct</span>( ein, <span class="at">.keep_all =</span> <span class="cn">TRUE</span> )</span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="fu">n_distinct</span>( pc<span class="sc">$</span>ein )</span></code></pre></div>
-<pre><code>## [1] 310349</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">nrow</span>( pc )</span></code></pre></div>
-<pre><code>## [1] 310349</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">n_distinct</span>( pf<span class="sc">$</span>ein )</span></code></pre></div>
-<pre><code>## [1] 98253</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="fu">nrow</span>( pf )</span></code></pre></div>
-<pre><code>## [1] 98253</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>pc <span class="ot">&lt;-</span> pc <span class="sc">%&gt;%</span> <span class="fu">distinct</span>( ein, <span class="at">.keep_all =</span> <span class="cn">TRUE</span> )</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>pf <span class="ot">&lt;-</span> pf <span class="sc">%&gt;%</span> <span class="fu">distinct</span>( ein, <span class="at">.keep_all =</span> <span class="cn">TRUE</span> )</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="co"># check to ensure it worked</span></span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="fu">n_distinct</span>( pc<span class="sc">$</span>ein ) <span class="sc">==</span> <span class="fu">nrow</span>( pc )</span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a><span class="fu">n_distinct</span>( pf<span class="sc">$</span>ein ) <span class="sc">==</span> <span class="fu">nrow</span>( pf )</span></code></pre></div>
+<pre><code>## [1] TRUE
+## [1] TRUE</code></pre>
 </div>
 </div>
 <div id="analysis" class="section level2">
@@ -2480,12 +2418,12 @@ some organizations may have submitted amended returns.</p>
 <h3>Step 1: Calculate Payroll Taxes Paid by Nonprofits</h3>
 <p>Calculate the amount of payroll taxes paid by Form 990 filers in
 2019:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="co"># helpful function for printing large numbers</span></span>
-<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>dollarize <span class="ot">&lt;-</span> <span class="cf">function</span>(x) </span>
-<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>{ <span class="fu">paste0</span>( <span class="st">&quot;$&quot;</span>, <span class="fu">format</span>( <span class="fu">round</span>(x,<span class="dv">0</span>), <span class="at">big.mark=</span><span class="st">&quot;,&quot;</span> ) ) }</span>
-<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a></span>
-<span id="cb31-5"><a href="#cb31-5" tabindex="-1"></a>prtax <span class="ot">&lt;-</span> <span class="fu">sum</span>( pc<span class="sc">$</span>payrolltx, <span class="at">na.rm =</span> T )</span>
-<span id="cb31-6"><a href="#cb31-6" tabindex="-1"></a><span class="fu">dollarize</span>( prtax )</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="co"># helpful function for printing large numbers</span></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>dollarize <span class="ot">&lt;-</span> <span class="cf">function</span>(x) </span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>{ <span class="fu">paste0</span>( <span class="st">&quot;$&quot;</span>, <span class="fu">format</span>( <span class="fu">round</span>(x,<span class="dv">0</span>), <span class="at">big.mark=</span><span class="st">&quot;,&quot;</span> ) ) }</span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>prtax <span class="ot">&lt;-</span> <span class="fu">sum</span>( pc<span class="sc">$</span>payrolltx, <span class="at">na.rm =</span> T )</span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a>prtax <span class="sc">%&gt;%</span> <span class="fu">dollarize</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;$55,464,358,803&quot;</code></pre>
 </div>
 <div id="step-2-estimate-the-effective-payroll-tax-rate" class="section level3">
@@ -2497,20 +2435,20 @@ Form 990 filers pay by the amount that Form 990 filers spend on salaries
 and benefits.</p>
 <p>Calculate the amount that Form 990 filers spend on salaries and
 benefits.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a>salaries <span class="ot">&lt;-</span> </span>
-<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a>  <span class="fu">sum</span>( pc<span class="sc">$</span>compnsatncurrofcr,</span>
-<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>       pc<span class="sc">$</span>compnsatnandothr,</span>
-<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a>       pc<span class="sc">$</span>othrsalwages,</span>
-<span id="cb33-5"><a href="#cb33-5" tabindex="-1"></a>       pc<span class="sc">$</span>pensionplancontrb,</span>
-<span id="cb33-6"><a href="#cb33-6" tabindex="-1"></a>       pc<span class="sc">$</span>othremplyeebenef, </span>
-<span id="cb33-7"><a href="#cb33-7" tabindex="-1"></a>       <span class="at">na.rm =</span> T )</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>salaries <span class="ot">&lt;-</span> </span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>  <span class="fu">sum</span>( pc<span class="sc">$</span>compnsatncurrofcr,</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>       pc<span class="sc">$</span>compnsatnandothr,</span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>       pc<span class="sc">$</span>othrsalwages,</span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a>       pc<span class="sc">$</span>pensionplancontrb,</span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a>       pc<span class="sc">$</span>othremplyeebenef, </span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>       <span class="at">na.rm =</span> T )</span></code></pre></div>
 <p>The following function can be helpful for printing large numbers:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="fu">dollarize</span>( salaries )</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a>salaries <span class="sc">%&gt;%</span> <span class="fu">dollarize</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;$965,155,601,055&quot;</code></pre>
 <p>We estimate the effective tax rate by tabulating the amount of
 payroll taxes paid by nonprofits divided by total salary costs:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> prtax <span class="sc">/</span> salaries</span>
-<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a><span class="fu">paste0</span>( <span class="dv">100</span><span class="sc">*</span><span class="fu">round</span>( ratio, <span class="dv">4</span> ), <span class="st">&quot;%&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> prtax <span class="sc">/</span> salaries</span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="fu">paste0</span>( <span class="dv">100</span><span class="sc">*</span><span class="fu">round</span>( ratio, <span class="dv">4</span> ), <span class="st">&quot;%&quot;</span> )</span></code></pre></div>
 <pre><code>## [1] &quot;5.75%&quot;</code></pre>
 </div>
 <div id="step-3-estimate-pf-contributions" class="section level3">
@@ -2518,25 +2456,25 @@ payroll taxes paid by nonprofits divided by total salary costs:</p>
 <p>It’s not perfect, but it allows us to roughly estimate the payroll
 taxes paid by private foundations since that data is not included in the
 SOI PF Extracts:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a>salaries.pf <span class="ot">&lt;-</span> </span>
-<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a>  <span class="fu">sum</span>( pf<span class="sc">$</span>compofficers, </span>
-<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a>       pf<span class="sc">$</span>pensplemplbenf, </span>
-<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a>       <span class="at">na.rm =</span> T )</span>
-<span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a></span>
-<span id="cb38-6"><a href="#cb38-6" tabindex="-1"></a><span class="fu">dollarize</span>( salaries.pf )</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a>salaries.pf <span class="ot">&lt;-</span> </span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a>  <span class="fu">sum</span>( pf<span class="sc">$</span>compofficers, </span>
+<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a>       pf<span class="sc">$</span>pensplemplbenf, </span>
+<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a>       <span class="at">na.rm =</span> T )</span>
+<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="#cb34-6" tabindex="-1"></a>salaries.pf <span class="sc">%&gt;%</span> <span class="fu">dollarize</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;$2,670,373,181&quot;</code></pre>
 <p>Estimated payroll taxes contributed by PFs:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a>prtax.pf <span class="ot">&lt;-</span> ratio <span class="sc">*</span> salaries.pf</span>
-<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a></span>
-<span id="cb40-3"><a href="#cb40-3" tabindex="-1"></a><span class="fu">dollarize</span>( prtax.pf )</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a>prtax.pf <span class="ot">&lt;-</span> ratio <span class="sc">*</span> salaries.pf</span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a>prtax.pf <span class="sc">%&gt;%</span> <span class="fu">dollarize</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;$153,457,677&quot;</code></pre>
 </div>
 <div id="step-4-tabulate-totals" class="section level3">
 <h3>Step 4: Tabulate Totals</h3>
 <p>Add the amount of payroll taxes that nonprofits pay to the estimated
 amount of payroll taxes contributed by Private Foundations:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a>tax.total <span class="ot">&lt;-</span> prtax <span class="sc">+</span> prtax.pf</span>
-<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="fu">dollarize</span>( tax.total )</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a>tax.total <span class="ot">&lt;-</span> prtax <span class="sc">+</span> prtax.pf</span>
+<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a>tax.total <span class="sc">%&gt;%</span> <span class="fu">dollarize</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;$55,617,816,480&quot;</code></pre>
 </div>
 <div id="step-5-adjust-for-inflation" class="section level3">
@@ -2546,7 +2484,7 @@ inflation was excessive during the time frame of the study (2019 to
 2023). As a result we should include an inflation adjustment. This
 scaling factor can be obtained by entering the start and end year on any
 reputable online inflation generator.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a>( tax.total <span class="sc">*</span> <span class="fl">1.1885</span> ) <span class="sc">%&gt;%</span> <span class="fu">dollarize</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a>( tax.total <span class="sc">*</span> <span class="fl">1.1885</span> ) <span class="sc">%&gt;%</span> <span class="fu">dollarize</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;$66,101,774,886&quot;</code></pre>
 <p>We see that the estimate increased from $55 billion to $66 billion, a
 significant amount.</p>
@@ -2577,6 +2515,238 @@ administrative tax data.</p>
 <hr>
 <p><br> <br></p>
 </div>
+
+<div class="footer">
+  <div class="footer-grid">
+
+       <section class="footer-1">  </section>
+
+       <section class="footer-2">
+
+			<?xml version="1.0" encoding="utf-8" ?>
+			<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="20 0 360 240" style="enable-background:new 20 0 400 240;" xml:space="preserve">
+			<style type="text/css">
+.st0{fill:none;}
+.st1{fill:#FFFFFF;}
+</style>
+			<title>ui-logo-rgb-white</title>
+			<metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d" ?>
+			<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c148 79.163858, 2019/03/06-03:18:36        ">
+			   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+				  <rdf:Description rdf:about xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lr="http://ns.adobe.com/lightroom/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#">
+					 <dc:title>
+						<rdf:Alt>
+						   <rdf:li xml:lang="x-default">ui-logo-rgb-white</rdf:li>
+						</rdf:Alt>
+					 </dc:title>
+					 <dc:subject>
+						<rdf:Bag>
+						   <rdf:li>Urban Brand 2018</rdf:li>
+						</rdf:Bag>
+					 </dc:subject>
+					 <dc:creator>
+						<rdf:Seq>
+						   <rdf:li>John Wehmann</rdf:li>
+						</rdf:Seq>
+					 </dc:creator>
+					 <lr:hierarchicalSubject>
+						<rdf:Bag>
+						   <rdf:li>Urban Brand 2018</rdf:li>
+						</rdf:Bag>
+					 </lr:hierarchicalSubject>
+					 <xmp:MetadataDate>2019-09-06T08:48:18-04:00</xmp:MetadataDate>
+					 <xmpMM:InstanceID>xmp.iid:c012fe38-e4be-4e60-b166-bcfdd9ec9737</xmpMM:InstanceID>
+					 <xmpMM:DocumentID>xmp.did:85d4d2a0-1e07-4b71-b398-789562f90b7f</xmpMM:DocumentID>
+					 <xmpMM:OriginalDocumentID>xmp.did:85d4d2a0-1e07-4b71-b398-789562f90b7f</xmpMM:OriginalDocumentID>
+					 <xmpMM:History>
+						<rdf:Seq>
+						   <rdf:li>
+							  <rdf:Description>
+								 <stEvt:action>saved</stEvt:action>
+								 <stEvt:instanceID>xmp.iid:85d4d2a0-1e07-4b71-b398-789562f90b7f</stEvt:instanceID>
+								 <stEvt:when>2018-02-06T16:26:50-05:00</stEvt:when>
+								 <stEvt:softwareAgent>Adobe Bridge CC 2018 (Macintosh)</stEvt:softwareAgent>
+								 <stEvt:changed>/metadata</stEvt:changed>
+							  </rdf:Description>
+						   </rdf:li>
+						   <rdf:li>
+							  <rdf:Description>
+								 <stEvt:action>saved</stEvt:action>
+								 <stEvt:instanceID>xmp.iid:c012fe38-e4be-4e60-b166-bcfdd9ec9737</stEvt:instanceID>
+								 <stEvt:when>2019-09-06T08:48:18-04:00</stEvt:when>
+								 <stEvt:softwareAgent>Adobe Bridge 2019 (Macintosh)</stEvt:softwareAgent>
+								 <stEvt:changed>/metadata</stEvt:changed>
+							  </rdf:Description>
+						   </rdf:li>
+						</rdf:Seq>
+					 </xmpMM:History>
+				  </rdf:Description>
+			   </rdf:RDF>
+			</x:xmpmeta>
+
+			<?xpacket end="w" ?></metadata>
+			<rect class="st0" width="360" height="240"></rect>
+			<path class="st1" d="M133.6,127.9h5.1V142h-5.1V127.9z"></path>
+			<path class="st1" d="M156,127.9h4.9l4.6,7.9h0.1c-0.2-1.2-0.4-2.4-0.4-3.6v-4.2h4.9V142h-4.9l-4.5-7.4h-0.1c0.2,0.9,0.3,1.9,0.3,2.8
+				v4.6H156V127.9z"></path>
+			<path class="st1" d="M185.5,137l0.3,0.2c0.9,0.8,2,1.2,3.2,1.3c0.5,0,1.3-0.2,1.3-0.8s-0.7-0.7-1.1-0.8l-1-0.2
+				c-2-0.4-3.7-1.5-3.7-3.8c0-3.4,3.1-5.2,6.1-5.2c1.6,0,3.1,0.4,4.5,1.2l-1.4,3.6c-0.9-0.7-1.9-1-3-1.1c-0.4,0-1.1,0.2-1.1,0.8
+				s0.6,0.6,1,0.7l1.2,0.3c2.2,0.5,3.8,1.7,3.8,4.1c0,3.4-3.1,5.1-6.1,5.1c-1.9,0-3.7-0.5-5.4-1.3L185.5,137z"></path>
+			<path class="st1" d="M211.5,127.9h10.8v4.6l-2.8-0.1v9.7h-5.1v-9.7l-2.8,0.1V127.9z"></path>
+			<path class="st1" d="M240.3,127.9h5.1V142h-5.1V127.9z"></path>
+			<path class="st1" d="M263.7,127.9h10.8v4.6l-2.8-0.1v9.7h-5.1v-9.7l-2.8,0.1V127.9z"></path>
+			<path class="st1" d="M303.3,127.9v8.4c0,4.1-2.6,6-6.6,6s-6.6-1.9-6.6-6v-8.4h5.1v7.9c0,1.1,0,2.1,1.4,2.1s1.4-1,1.4-2.1v-7.9
+				L303.3,127.9z"></path>
+			<path class="st1" d="M317,127.9h10.8v4.6l-2.8-0.1v9.7h-5.1v-9.7l-2.8,0.1V127.9z"></path>
+			<path class="st1" d="M344.6,127.9h9.5v3.9h-4.3v1.4h4v3.7h-4v1.4h4.5v3.8h-9.7V127.9z"></path>
+			<path class="st1" d="M138.8,68v25.4c0,12.5-7.9,18.2-19.9,18.2s-19.9-5.7-19.9-18.2V68h15.6v23.9c0,3.4,0.1,6.3,4.3,6.3
+				s4.3-3,4.3-6.3V68H138.8z"></path>
+			<path class="st1" d="M155.1,68h18.9c9.7,0,17.9,4.1,17.9,14.9c0,6.5-2.5,9.2-8.3,11.2v0.3c1,0.7,1.9,1.6,2.6,2.6l9.3,14h-18
+				l-6.8-13.8h-0.3V111h-15.3V68z M170.3,87h1.1c2.6,0,5.1-0.4,5.1-3.6s-2.3-3.7-5-3.7h-1.2L170.3,87z"></path>
+			<path class="st1" d="M207.4,68h18.2c8.3,0,16.8,2,16.8,11.9c0,3.8-1.9,7.5-5.6,8.7v0.3c4.7,1.7,7.6,5.1,7.6,10.2
+				c0,8.8-8.2,11.8-15.7,11.8h-21.2V68z M223.3,84.5c2.3,0,4.8-0.2,4.8-3.2c0-3.2-2.9-3-5.2-3h-1.1v6.2L223.3,84.5z M221.9,100.7h1.8
+				c2.6,0,6.3-0.1,6.3-3.6s-4-3.5-6.5-3.5h-1.5L221.9,100.7z"></path>
+			<path class="st1" d="M269.8,110.9h-16.5L268.2,68h17.3l15.3,43h-16.5l-1.4-5.4h-11.8L269.8,110.9z M280.1,95.4l-1.8-7.6
+				c-0.5-1.8-0.7-3.7-1-5.5h-0.6l-2.8,13.1H280.1z"></path>
+			<path class="st1" d="M311.1,68h15l14,23.8h0.5c-0.7-3.6-1.2-7.3-1.3-10.9V68h14.9v43h-14.9l-13.7-22.6h-0.5c0.6,2.8,0.9,5.7,1,8.6
+				v14h-15V68z"></path>
+			<rect x="213.5" y="213.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="186.9" y="213.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="106.9" y="213.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="133.5" y="213.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="160.2" y="213.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="80.2" y="213.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="53.5" y="213.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="26.9" y="213.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="186.9" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="213.5" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="106.9" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="133.5" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="160.2" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="80.2" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="186.9" y="159.8" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="213.5" y="159.8" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="106.9" y="159.8" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="133.5" y="159.8" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="160.2" y="159.8" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="80.2" y="159.8" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="80.2" y="133.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="80.2" y="106.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="80.2" y="79.8" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="160.2" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="186.9" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="213.5" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="80.2" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="106.9" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="133.5" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="53.5" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="53.5" y="159.8" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="53.5" y="133.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="53.5" y="106.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="53.5" y="79.8" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="133.5" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="160.2" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="186.9" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="213.5" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="53.5" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="80.2" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="106.9" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="186.9" y="186.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="213.5" y="186.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="106.9" y="186.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="133.5" y="186.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="160.2" y="186.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="80.2" y="186.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="53.5" y="186.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="26.9" y="53.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="26.9" y="159.8" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="26.9" y="186.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="26.9" y="133.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="26.9" y="106.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="26.9" y="79.8" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="106.9" y="133.1" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="186.9" y="26.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="213.5" y="26.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="106.9" y="26.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="133.5" y="26.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="160.2" y="26.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="80.2" y="26.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="53.5" y="26.5" class="st1" width="4.4" height="4.4"></rect>
+			<rect x="26.9" y="26.5" class="st1" width="4.4" height="4.4"></rect>
+			</svg>
+
+
+        </section>
+
+
+
+       <section class="footer-3">
+         <h4>  National Center for Charitable Statistics  </h4>
+       </section>
+
+       <section class="footer-4">  </section>
+
+   </div>
+
+</div>
+
+
+
+
+
+<style>
+.footer {
+padding-left: 0%;
+padding-right: 0%;
+}
+.footer{
+min-height: 450px;
+height: auto;
+background-color: #0A4C6A;
+color: white;
+padding-bottom: 3em;
+padding-top: 6em;
+}
+.footer-grid {
+display: grid;
+grid-template-columns: 1fr;
+grid-auto-rows: auto;
+grid-gap: 50px;
+margin: auto;
+max-width: 70%;
+padding-left: 0px;
+}
+@media (min-width: 1000px) {
+.footer-grid {
+grid-template-columns: repeat(4, 1fr);
+grid-gap: 20px;
+max-width: 100%; }
+}
+section {
+padding:20px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+section {
+padding:100px; }
+}
+.footer svg {
+margin-left: 20px;
+}
+.footer h4 {
+font-size:4rem;
+text-align:center;
+color:white;
+margin-top: 20px !important;
+margin-bottom: 20px !important;
+}
+</style>
+
+
+
 
 
 

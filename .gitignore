@@ -24,9 +24,6 @@
 .Rproj.user
 .Rproj.user/
 
-# produced vignettes
-vignettes/*.html
-vignettes/*.pdf
 
 # OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
 .httr-oauth
@@ -58,10 +55,6 @@ macros/
 output/
 sasdata/
 libs/
-
-# Exclude .Rmd output
-*.html
-**/figure-html/
 
 # Exclude Text
 *.txt
