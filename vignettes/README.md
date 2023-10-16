@@ -4,6 +4,28 @@ For any projects that require capturing more than basic scripts about projects -
 
 GitHub pages can be turned on to activate any HTML pages in this repository so they can be linked as free-standing data tutorials or used as part of a data story. 
 
+## HTML Elements
+
+* footer.html
+* header.html
+* css.clean
+
+---
+title: "Estimating Sector Size Using Payroll Taxes"
+output:
+  html_document:
+    theme: readable
+    df_print: paged
+    highlight: tango
+    toc: true
+    self_contained: true
+    number_sections: false
+    css: clean.css
+    include:
+      before_body: header.html
+      after_body: footer.html
+---
+
 ## Large Datasets and Reproducibility
 
 # functions to help write reproducible vignettes
